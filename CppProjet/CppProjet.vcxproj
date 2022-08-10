@@ -19,13 +19,23 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animal.h" />
+    <ClInclude Include="Cats.h" />
+    <ClInclude Include="Fish.h" />
     <ClInclude Include="Login.h" />
+    <ClInclude Include="Otariinae.h" />
     <ClInclude Include="Register.h" />
+    <ClInclude Include="Zoo.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Animal.cpp" />
+    <ClCompile Include="Cats.cpp" />
+    <ClCompile Include="Fish.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Otariinae.cpp" />
     <ClCompile Include="Register.cpp" />
+    <ClCompile Include="Zoo.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
