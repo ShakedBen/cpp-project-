@@ -9,6 +9,7 @@ protected:
 public:
 
 	/*constructor*/
+	Cats();
 	Cats(const char* name, const float age, const int chamber	, const int speedAbility, const int jumpAbility, const int hourSleep);//c'tor
 	Cats(Animal&& base, int speedAbility, int jumpAbility, int hourSleep)noexcept;//mc-c'tor
 	Cats(const Cats& other);//c-c'tor

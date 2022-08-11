@@ -5,6 +5,7 @@ using namespace std;
 #include <string>
 #include <vector>
 #include"Register.h"
+#include"Zoo.h"
 class Login
 {
 private:

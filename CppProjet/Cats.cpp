@@ -1,5 +1,11 @@
 #include "Cats.h"
 /*constructor*/
+Cats::Cats()
+{
+	this->speedAbility = 0;
+	this->jumpAbility = 0;
+	this->hourSleep = 0;
+}
 Cats::Cats(const char* name, const float age, const int chamber, const int speedAbility, const int jumpAbility, const int hourSleep):Animal(name,age,chamber), speedAbility(speedAbility), jumpAbility(jumpAbility), hourSleep(hourSleep)//c'tor
 {}
 Cats::Cats(Animal&& base, int speedAbility, int jumpAbility, int hourSleep)noexcept :Animal(std::move(base)), speedAbility(speedAbility), jumpAbility(jumpAbility), hourSleep(hourSleep)//mc-c'tor
@@ -22,6 +28,7 @@ const Cats& Cats::operator=(const Cats& other)
 		this->jumpAbility = other.jumpAbility;
 		this->hourSleep = other.hourSleep;
 	}
+	return *this;
 	}
 const Cats& Cats::operator=(Cats&& other)noexcept
 {
@@ -32,6 +39,7 @@ const Cats& Cats::operator=(Cats&& other)noexcept
 		std::swap(this->jumpAbility , other.jumpAbility);
 		std::swap(this->hourSleep , other.hourSleep);
 	}
+	return *this;
 }
 
 /*set*/

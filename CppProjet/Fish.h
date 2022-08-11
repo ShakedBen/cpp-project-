@@ -9,6 +9,7 @@ protected:
 public:
 
 	/*constructor*/
+	Fish();
 	Fish(const char* name, const float age, const int chamber, const 	char* color,const float size,const float swimmingSpeed);//c'tor
 	Fish(Animal&& base, char* color, float size, float swimmingSpeed)noexcept;//mc-c'tor
 	Fish(const Fish& other);//c-c'tor

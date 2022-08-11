@@ -6,6 +6,8 @@ using namespace std;
 
 class Animal
 {
+private:
+
 protected:
 	char *name;
 	float age;
@@ -14,6 +16,7 @@ protected:
 public:
 
 	/*constructor*/
+	Animal();
 	Animal(const char* name,const float age, const int chamber);//c'tor
 	Animal(const Animal& other);//c-c'tor
 	Animal(Animal&& other)noexcept;//m-c'tor
@@ -33,7 +36,7 @@ public:
 	const int getChamber();
 
 			/*method*/
-	 void show() const;
+	void show() const;
 
 };
 

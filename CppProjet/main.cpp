@@ -23,13 +23,14 @@ int main()
 	int ch;
 	while (run)
 	{
-		cout << "**************************" << endl;
-		cout << "*  Wellcome to the menu  *" << endl;
-		cout << "*To connect press      1 *" << endl;
-		cout << "*To register click     2 *" << endl;
-		cout << "*To edit profile click 3 *" << endl;
-		cout << "*To exit click         0 *" << endl;
-		cout << "**************************" << endl;
+		cout << "********************************" << endl;
+		cout << "*     Wellcome to the men      *" << endl;
+		cout << "*To connect press            1 *" << endl;
+		cout << "*To register click           2 *" << endl;
+		cout << "*To edit profile click       3 *" << endl;
+		cout << "*To go to the zoo game click 4 *" << endl;
+		cout << "*To exit click               0 *" << endl;
+		cout << "********************************" << endl;
 	cin >> pick;
 		switch (pick)
 		{
@@ -174,6 +175,18 @@ int main()
 				cout << "Please try to login before you can access the profile" << endl<<endl;
 			}
 		}
+		case 4:{
+			if (accLog->isLogin())
+			{
+				Zoo a;
+				a.Start();
+			}
+			else
+			{
+				cout << "Please try to login before you can access the profile" << endl << endl;
+			}
+		
+		}break;
 		break;
 		default: 
 			if (pick == 0)

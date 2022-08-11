@@ -2,6 +2,12 @@
 #include<string>
 #define _CRT_SECURE_NO_WARNINGS
 /*constructor*/
+Fish::Fish()
+{
+	color = NULL;
+	size = 0;
+	swimmingSpeed = 0;
+}
 Fish::Fish(const char* name, const float age, const int chamber, const char* color, const float size, const float swimmingSpeed) :Animal(name, age, chamber)//c'tor
 {
 	if (this->color == NULL)

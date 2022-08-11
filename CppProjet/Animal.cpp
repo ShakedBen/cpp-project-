@@ -1,6 +1,12 @@
 #include "Animal.h"
+Animal::Animal()
+{
+	name = NULL;
+	age = 0;
+	chamber = 0;
+}
 /*constructor*/
-Animal::Animal(const char* name, const float age, const int chamber):name(NULL)//c'tor
+Animal::Animal(const char* name=NULL, const float age=0, const int chamber=0):name(NULL)//c'tor
 {
 	if(this->name==NULL)
 		delete[]this->name;
@@ -81,10 +87,8 @@ const int Animal::getChamber()
 	return chamber;
 }
 
-void Animal::show() const
-{
-}
 
 /*method*/
 void Animal::show() const {
 	cout << "name is: " << name << " age is: " << age << " chamber is :" << chamber << endl;
+}
