@@ -55,14 +55,14 @@ void Zoo::Start()
 	cout << "*Hello and welcome to the zoo*" << endl;
 	cout << "******************************" << endl;
 	cout << endl;
-	cout << endl;
-	bool run = true,onlystr=false;
+	bool onlystr=false;
 
 	int amountOfAnimals, pick;
 	cout << "Select the amount of animals" << endl;
 	cin >> amountOfAnimals;
-	while (run)
+	while (amountOfAnimals>0)
 	{
+		amountOfAnimals--;
 		cout << "****************************" << endl;
 		cout << "* To add Cat click       1 *" << endl;
 		cout << "* To add Fish click      2 *" << endl;
@@ -90,6 +90,12 @@ void Zoo::Start()
 			cin >> hourSleep;
 			animal = new Cats(name, age, chamber, speedAbility, jumpAbility, hourSleep);
 			onlystr = false;
+			if (animal)
+			{
+				Cats* temp = dynamic_cast<Cats*>(animal);
+				if (temp)
+					temp->show();
+			}
 		}break;
 		case 2: {
 			while (!onlystr)
@@ -113,6 +119,12 @@ void Zoo::Start()
 			cin >> swimmingSpeed;
 			onlystr = false;
 			animal = new Fish(name, age, chamber,color, size, swimmingSpeed);
+			if (animal)
+			{
+				Fish* temp = dynamic_cast<Fish*>(animal);
+				if (temp)
+					temp->show();
+			}
 		}break;
 		case 3: {
 			while (!onlystr)
@@ -130,26 +142,33 @@ void Zoo::Start()
 			cin >> jumpAbility;
 			cout << "Enter hour sleep: ";
 			cin >> hourSleep;
+			onlystr = false;
 			while (!onlystr)
 			{
 				cout << "Enter color of fish :";
 				cin >> color;
-				onlystr = onlyChar(name);
+				onlystr = onlyChar(color);
 			}
 			cout << "Enter size of fish: ";
 			cin >> size;
 			cout << "Enter swimming Speed :";
 			cin >> swimmingSpeed;
-			cout << " Enter fin Length :";
+			cout << "Enter fin Length :";
 			cin >> finLength;
 			onlystr = false;
 			animal = new Otariinae(name, age, chamber, speedAbility, jumpAbility, hourSleep, color, size, swimmingSpeed, finLength);
+			if (animal)
+			{
+				Otariinae* temp = dynamic_cast<Otariinae*>(animal);
+				if (temp)
+					temp->show();
+			};
 		
 		}break;
 		default: {
 			if (pick == 0)
 			{
-				run = false;
+				sizeOfAnimal = 0;
 		}
 			else {
 				cout << "Try to enter a number between 1-3" << endl;

@@ -36,7 +36,7 @@ public:
 	const int getChamber();
 
 			/*method*/
-	void show() const;
+	virtual void show() const;
 
 };
 

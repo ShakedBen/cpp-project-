@@ -164,13 +164,10 @@ int main()
 						}
 						break;
 					}break;
-
 					}
-
 				}
 			}
 			else
-
 			{
 				cout << "Please try to login before you can access the profile" << endl<<endl;
 			}

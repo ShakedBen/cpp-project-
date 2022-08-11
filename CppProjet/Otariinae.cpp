@@ -63,7 +63,7 @@ float Otariinae::GetFinLength()
 void Otariinae::show()const
 {
 	Cats::show();
-	Fish::show();
+	cout << " color is: " << color <<endl<< "size is: " << size << " swimming speed is: " << swimmingSpeed<<" ";
 	cout << "fin length is :" << finLength << endl;
 
 }
