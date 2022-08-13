@@ -15,30 +15,38 @@ bool Login::checkEmailAndPassword(const string email, const string password)
 	int id;
 	bool admin;
 	ifstream inFile("users.txt");
-	while (!inFile.eof())
+	if (inFile.fail())
 	{
-		inFile >> name >> lastName >> phone >> email1 >> id >> password1 >> admin;
-		if (email1 == email&& decryptPassword(password1) == password)
+		cout << "Error trying to connect to database" << endl;
+		return false;
+	}
+	else
+	{
+		while (!inFile.eof())
 		{
-			this->email = email;
-			this->password = password;
-			inFile.close();
-			this->name = name;
-			this->phone = phone;
-			this->ID = id;
-			this->admin = admin;
-			this->lastName = lastName;
-			return true;
-		}
-		else if (email1 == email && decryptPassword(password1) != password)
-		{
-			inFile.close();
-			cout << "The password is incorrect" << endl;
-			this->login = false;
-			return false;
-		
-		}
+			inFile >> name >> lastName >> phone >> email1 >> id >> password1 >> admin;
+			if (email1 == email && decryptPassword(password1) == password)
+			{
+				this->email = email;
+				this->password = password;
+				this->name = name;
+				this->phone = phone;
+				this->ID = id;
+				this->admin = admin;
+				this->lastName = lastName;
+				inFile.close();
+				return true;
+			}
+			else if (email1 == email && decryptPassword(password1) != password)
+			{
+				inFile.close();
+				cout << "The password is incorrect" << endl;
+				this->login = false;
+				return false;
 
+			}
+
+		}
 	}
 	inFile.close();
 	cout << "This email does not exist in the system yet" << endl;
